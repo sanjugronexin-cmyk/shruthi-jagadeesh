@@ -201,7 +201,7 @@ export function CelebrationsSection() {
             />
           </p>
           <p className="font-serif-inv celebration-date text-[#6B0F0D] mt-0.5">
-            <ScrollLetters text="6:00 AM Onwards" progress={row2Progress} start={0.2} end={0.38} fromX={8} />
+            <ScrollLetters text="6:00 AM – 7:30 AM" progress={row2Progress} start={0.2} end={0.38} fromX={8} />
           </p>
           <SmallOrnamentLine className="mt-2 max-w-[130px] sm:max-w-[190px]" />
         </div>

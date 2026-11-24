@@ -203,7 +203,7 @@ export function VenueSection() {
               </span>
             </div>
             <p className="font-serif-inv italic text-sm sm:text-lg text-[#6B0F0D] mt-1 font-semibold">
-              7:30 AM onwards
+              6:00 AM onwards
             </p>
           </div>
         </div>
