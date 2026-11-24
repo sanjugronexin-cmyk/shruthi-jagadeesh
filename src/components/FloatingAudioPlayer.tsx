@@ -72,11 +72,11 @@ export function FloatingAudioPlayer() {
                 title={isMuted ? "Play music" : "Mute music"}
                 className="flex items-center gap-2 transition-all cursor-pointer"
             >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B0F0D] text-[#FDF4DE]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#6B0F0D] text-[#FDF4DE]">
                     {isMuted ? (
-                        <VolumeX className="h-8 w-8" /> 
+                        <VolumeX className="h-7 w-7" /> 
                     ) : (
-                        <Volume2 className="h-8 w-8" />
+                        <Volume2 className="h-7 w-7" />
                     )}
                 </span>
             </button>
