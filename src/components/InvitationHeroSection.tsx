@@ -122,7 +122,7 @@ export function InvitationHeroSection() {
           <div className="mt-0.5 sm:mt-1 flex flex-col items-center">
             <span className="font-serif-inv text-2xl sm:text-[42px] font-normal text-[#6B0F0D] tracking-wide leading-tight">
               <ScrollLetters
-                text="Ananya"
+                text="N.Sai Shruthi"
                 progress={scrollYProgress}
                 start={0.21}
                 end={0.32}
@@ -138,7 +138,7 @@ export function InvitationHeroSection() {
             </div>
             <span className="font-serif-inv text-2xl sm:text-[42px] font-normal text-[#6B0F0D] tracking-wide leading-tight">
               <ScrollLetters
-                text="Arjun"
+                text="N.Jagadeesh Gandhi"
                 progress={scrollYProgress}
                 start={0.27}
                 end={0.38}
@@ -207,7 +207,7 @@ export function InvitationHeroSection() {
         >
           <img
             src="/assets/couple/couple-illustration.png"
-            alt="Ananya and Arjun in traditional South Indian wedding attire"
+            alt="Shruthi and Jagadeesh in traditional South Indian wedding attire"
             loading="eager"
             decoding="async"
             className="h-[min(41dvh,80vw)] max-h-[430px] w-auto object-contain object-bottom"
@@ -254,7 +254,7 @@ export function InvitationHeroSection() {
             <div className="absolute inset-0 flex items-center justify-center gap-1.5 sm:gap-3 px-3 text-[#6B0F0D] font-serif-inv text-[12px] min-[390px]:text-[13px] sm:text-xl font-semibold tracking-wide">
               <span className="inline-block w-2.5 sm:w-5 h-[1px] bg-[#C8962E]" />
               <span className="whitespace-nowrap">
-                13<sup className="text-[0.72em]">th</sup> December 2026
+                29<sup className="text-[0.72em]">th</sup> November 2026
               </span>
               <span className="inline-block w-2.5 sm:w-5 h-[1px] bg-[#C8962E]" />
             </div>

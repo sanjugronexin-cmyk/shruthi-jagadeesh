@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import { Calendar } from 'lucide-react';
 import { ScrollLetters } from './ScrollLetters';
 
-const WEDDING_TARGET_MS = new Date('2026-12-13T07:30:00+05:30').getTime();
+const WEDDING_TARGET_MS = new Date('2026-11-29T07:30:00+05:30').getTime();
 
 const COUNTDOWN_PETALS = [
   { id: 1, left: '27%', top: '14%', w: 12, rot: -18, delay: '0.2s' },
@@ -236,7 +236,7 @@ export function CountdownSection() {
               <div className="flex items-center gap-1.5 sm:gap-2 text-[#6B0F0D] whitespace-nowrap shrink-0">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#7A1210]" strokeWidth={1.75} />
                 <span className="font-serif-inv text-sm sm:text-2xl font-semibold tracking-wide">
-                  13 &nbsp;December 2026
+                  29 &nbsp;November 2026
                 </span>
               </div>
               <div className="flex items-center flex-1">

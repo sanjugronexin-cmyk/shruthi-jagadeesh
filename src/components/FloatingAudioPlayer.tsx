@@ -1,36 +1,36 @@
+
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 const AUDIO_SRC = "/assets/audio/wedding-audio.mpeg";
-
-const LOOP_START_SEC = 50;
-const LOOP_END_SEC = 80;
+const LOOP_START_SEC = 0;
+const LOOP_END_SEC = 50;
 
 export function FloatingAudioPlayer() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [isMuted, setIsMuted] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
 
+    // Mute / unmute without restarting the song
     const handleToggleMute = useCallback(async () => {
         const audio = audioRef.current;
         if (!audio) return;
 
         if (audio.paused) {
-            if (
-                audio.currentTime < LOOP_START_SEC ||
-                audio.currentTime >= LOOP_END_SEC
-            ) {
-                audio.currentTime = LOOP_START_SEC;
-            }
+            audio.muted = false;
+            audio.currentTime = LOOP_START_SEC;
 
             try {
                 await audio.play();
                 setIsPlaying(true);
-            } catch {
-                return;
+                setIsMuted(false);
+            } catch (error) {
+                console.error("Audio playback failed:", error);
             }
+
+            return;
         }
 
         audio.muted = !audio.muted;
@@ -41,29 +41,26 @@ export function FloatingAudioPlayer() {
         const audio = audioRef.current;
         if (!audio) return;
 
-        if (audio.duration > LOOP_START_SEC) {
-            audio.currentTime = LOOP_START_SEC;
-        }
+        audio.currentTime = LOOP_START_SEC;
     };
 
     const handleTimeUpdate = () => {
         const audio = audioRef.current;
         if (!audio) return;
 
-        if (audio.duration > LOOP_START_SEC) {
-            const effectiveEnd = Math.min(LOOP_END_SEC, audio.duration);
+        const effectiveEnd = Math.min(LOOP_END_SEC, audio.duration);
 
-            if (audio.currentTime >= effectiveEnd) {
-                audio.currentTime = LOOP_START_SEC;
-            }
+        if (audio.currentTime >= effectiveEnd) {
+            audio.currentTime = LOOP_START_SEC;
         }
     };
 
-    // Attempt autoplay when the page loads
+    // Attempt autoplay from the beginning on every page load
     useEffect(() => {
         const audio = audioRef.current;
         if (!audio) return;
 
+        audio.currentTime = LOOP_START_SEC;
         audio.muted = false;
 
         const attemptPlay = async () => {
@@ -71,9 +68,10 @@ export function FloatingAudioPlayer() {
                 await audio.play();
                 setIsPlaying(true);
                 setIsMuted(false);
-            } catch {
-                // Browser may block autoplay.
+            } catch (error) {
+                // Browser may block audible autoplay.
                 setIsPlaying(false);
+                console.log("Autoplay blocked. User interaction required.");
             }
         };
 
@@ -95,13 +93,6 @@ export function FloatingAudioPlayer() {
                 onTimeUpdate={handleTimeUpdate}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
-                onEnded={() => {
-                    const audio = audioRef.current;
-                    if (!audio) return;
-
-                    audio.currentTime = LOOP_START_SEC;
-                    void audio.play().catch(() => {});
-                }}
             />
 
             <button

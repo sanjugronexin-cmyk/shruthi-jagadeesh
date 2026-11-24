@@ -33,7 +33,6 @@ export function BlessingsSection() {
   const centerpieceY = useTransform(centerProgress, [0, 0.05, 0.5, 1], ['46px', '46px', '0px', '0px']);
   const centerpieceOpacity = useTransform(centerProgress, [0, 0.05, 0.4, 1], [0, 0, 1, 1]);
 
-  // Sign-off block ("WITH LOVE, Ananya & Arjun And Our Families")
   const { scrollYProgress: signoffProgress } = useScroll({
     target: signoffRef,
     offset: ['start 97%', 'end 100%'],
@@ -153,14 +152,14 @@ export function BlessingsSection() {
       <motion.div
         ref={signoffRef}
         style={prefersReduced ? {} : { y: signoffY, opacity: signoffOpacity }}
-        className="relative z-20 -mt-1 sm:-mt-3 px-4 text-center flex flex-col items-center will-change-transform"
+        className="relative z-20 px-4 text-center flex flex-col items-center will-change-transform"
       >
         <p className="font-serif-inv text-xs sm:text-base tracking-[0.16em] uppercase text-[#6B0F0D] font-medium">
           <ScrollLetters text="WITH LOVE," progress={signoffProgress} start={0.04} end={0.2} fromX={-8} />
         </p>
         <p className="font-script text-4xl sm:text-6xl text-[#7A1210] mt-1 leading-tight">
           <ScrollLetters
-            text="Ananya & Arjun"
+            text="Shruthi  & Jagadeesh"
             progress={signoffProgress}
             start={0.12}
             end={0.38}

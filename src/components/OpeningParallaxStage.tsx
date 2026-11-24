@@ -180,7 +180,7 @@ export function OpeningParallaxStage() {
             >
               <img
                 src="/assets/hero/bride.png"
-                alt="Ananya, the Bride"
+                alt="Shruthi, the Bride"
                 loading="eager"
                 decoding="async"
                 className="h-[min(28.5dvh,56vw)] max-h-[290px] w-auto object-contain object-bottom"
@@ -192,7 +192,7 @@ export function OpeningParallaxStage() {
             >
               <img
                 src="/assets/hero/groom.png"
-                alt="Arjun, the Groom"
+                alt="Jagadeesh, the Groom"
                 loading="eager"
                 decoding="async"
                 className="h-[min(31.9dvh,62.7vw)] max-h-[325px] w-auto object-contain object-bottom"

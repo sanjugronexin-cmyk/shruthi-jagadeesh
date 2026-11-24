@@ -4,15 +4,16 @@ import { Calendar, Clock } from 'lucide-react';
 import { JasmineDivider, ScrollFlourishDivider } from './Ornaments';
 import { ScrollLetters } from './ScrollLetters';
 
-const MAPS_DIRECTIONS_URL = 'https://maps.app.goo.gl/Whu18m4R2mQfHa6N7';
+const MAPS_DIRECTIONS_URL = 'https://maps.app.goo.gl/DKfMkWhNb9nrm1fFA';
+
 
 const GOOGLE_CALENDAR_SAVE_URL =
   'https://calendar.google.com/calendar/render?action=TEMPLATE' +
-  '&text=Ananya+%26+Arjun+Wedding+-+Muhurtham' +
-  '&dates=20261213T073000/20261213T110000' +
+  '&text=Shruthi+%26+Jagadeesh+Wedding' +
+  '&dates=20261129T060000/20261129T073000' +
   '&ctz=Asia/Kolkata' +
-  '&details=Together+with+our+families%2C+we+warmly+invite+you+to+celebrate+the+wedding+of+Ananya+%26+Arjun.' +
-  '&location=SPP+Gardens+Outdoor+Wedding+Venue%2C+Maduravoyal%2C+Chennai';
+  '&details=Together+with+our+families%2C+we+warmly+invite+you+to+celebrate+the+wedding+of+Shruthi+%26+Jagadeesh.' +
+  '&location=Shree+Venkatesh+Mahal%2C+Zamin+Pallavaram%2C+Chennai';
   
 export function VenueSection() {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -170,12 +171,12 @@ export function VenueSection() {
         </div>
 
         <h3 className="font-serif-inv text-2xl sm:text-4xl font-bold text-[#6B0F0D] mt-2 tracking-wide">
-          <ScrollLetters text="SPP Gardens" progress={detailsProgress} start={0.08} end={0.26} fromX={-10} />
+          <ScrollLetters text="Shree Venkatesh Mahal" progress={detailsProgress} start={0.08} end={0.26} fromX={-10} />
         </h3>
         <p className="font-serif-inv text-xs sm:text-base text-[#5A1812] mt-1.5 leading-relaxed">
-          OLD NO. 55, 51, Mettukuppam Rd, Kandan Nagar, Maduravoyal
+          200 Feet Radial Road, Pallava Garden, Zamin Pallavaram
           <br />
-          Chennai, Tamil Nadu 600095
+          Chennai, Tamil Nadu 600129
         </p>
 
         <JasmineDivider className="mt-4 sm:mt-5" />
@@ -190,7 +191,7 @@ export function VenueSection() {
               </span>
             </div>
             <p className="font-serif-inv italic text-sm sm:text-lg text-[#6B0F0D] mt-1 font-semibold">
-              13 December 2026
+              29 November 2026
             </p>
           </div>
 

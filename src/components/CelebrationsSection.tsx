@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 import { LeafFlourish, ScrollFlourishDivider, SmallOrnamentLine } from './Ornaments';
 import { ScrollLetters } from './ScrollLetters';
 
@@ -145,14 +145,14 @@ export function CelebrationsSection() {
           <div className="flex items-center justify-center gap-1 sm:gap-2">
             <LeafFlourish direction="left" />
             <h3 className="font-serif-inv celebration-title uppercase text-[#6B0F0D] font-bold">
-              <ScrollLetters text="ENGAGEMENT" progress={row1Progress} start={0.08} end={0.28} fromX={-10} />
+              <ScrollLetters text="RECEPTION" progress={row1Progress} start={0.08} end={0.28} fromX={-10} />
             </h3>
             <LeafFlourish direction="right" />
           </div>
           <SmallOrnamentLine className="mt-1.5 sm:mt-2 mb-2 max-w-[160px] sm:max-w-[230px]" />
           <p className="font-serif-inv celebration-date text-[#6B0F0D]">
             <ScrollLetters
-              text="Saturday, 12 December 2026"
+              text="Saturday, 12 November 2026"
               progress={row1Progress}
               start={0.14}
               end={0.34}
@@ -160,7 +160,7 @@ export function CelebrationsSection() {
             />
           </p>
           <p className="font-serif-inv celebration-date text-[#6B0F0D] mt-0.5">
-            <ScrollLetters text="6:30 PM onwards" progress={row1Progress} start={0.2} end={0.38} fromX={-8} />
+            <ScrollLetters text="6:00 PM onwards" progress={row1Progress} start={0.2} end={0.38} fromX={-8} />
           </p>
           <SmallOrnamentLine className="mt-2 max-w-[130px] sm:max-w-[190px]" />
         </div>
@@ -186,14 +186,14 @@ export function CelebrationsSection() {
           <div className="flex items-center justify-center gap-1 sm:gap-2">
             <LeafFlourish direction="left" />
             <h3 className="font-serif-inv celebration-title uppercase text-[#6B0F0D] font-bold">
-              <ScrollLetters text="MUHURTHAM" progress={row2Progress} start={0.08} end={0.28} fromX={10} />
+              <ScrollLetters text="WEDDING" progress={row2Progress} start={0.08} end={0.28} fromX={10} />
             </h3>
             <LeafFlourish direction="right" />
           </div>
           <SmallOrnamentLine className="mt-1.5 sm:mt-2 mb-2 max-w-[160px] sm:max-w-[230px]" />
           <p className="font-serif-inv celebration-date text-[#6B0F0D]">
             <ScrollLetters
-              text="Sunday, 13 December 2026"
+              text="Sunday, 29 November 2026"
               progress={row2Progress}
               start={0.14}
               end={0.34}
@@ -201,7 +201,7 @@ export function CelebrationsSection() {
             />
           </p>
           <p className="font-serif-inv celebration-date text-[#6B0F0D] mt-0.5">
-            <ScrollLetters text="7:30 AM – 8:30 AM" progress={row2Progress} start={0.2} end={0.38} fromX={8} />
+            <ScrollLetters text="6:00 AM – 7:30 AM" progress={row2Progress} start={0.2} end={0.38} fromX={8} />
           </p>
           <SmallOrnamentLine className="mt-2 max-w-[130px] sm:max-w-[190px]" />
         </div>
@@ -245,14 +245,14 @@ export function CelebrationsSection() {
           <div className="flex items-center justify-center gap-1 sm:gap-2">
             <LeafFlourish direction="left" />
             <h3 className="font-serif-inv celebration-title uppercase text-[#6B0F0D] font-bold">
-              <ScrollLetters text="RECEPTION" progress={row3Progress} start={0.08} end={0.28} fromX={-10} />
+              <ScrollLetters text="BRIDE'S RECEPTION" progress={row3Progress} start={0.08} end={0.28} fromX={-10} />
             </h3>
             <LeafFlourish direction="right" />
           </div>
           <SmallOrnamentLine className="mt-1.5 sm:mt-2 mb-2 max-w-[160px] sm:max-w-[230px]" />
           <p className="font-serif-inv celebration-date text-[#6B0F0D]">
             <ScrollLetters
-              text="Sunday, 13 December 2026"
+              text="Friday, 04 December 2026"
               progress={row3Progress}
               start={0.14}
               end={0.34}
@@ -260,7 +260,8 @@ export function CelebrationsSection() {
             />
           </p>
           <p className="font-serif-inv celebration-date text-[#6B0F0D] mt-0.5">
-            <ScrollLetters text="Before Muhurtham" progress={row3Progress} start={0.2} end={0.38} fromX={-8} />
+            <ScrollLetters text="6:00 PM onwards" progress={row3Progress} start={0.2} end={0.38} fromX={-8} /> <br />
+            <ScrollLetters text={"Kammavar Naidu Kalyana Mahal,\n67, Thirrumanjana veedhi, Swamimalai."} progress={row3Progress} start={0.2} end={0.38} fromX={-8} />
           </p>
           <SmallOrnamentLine className="mt-2 max-w-[130px] sm:max-w-[190px]" />
         </div>
