@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 const AUDIO_SRC = "/assets/audio/wedding-audio.mpeg";
@@ -10,14 +10,14 @@ const LOOP_END_SEC = 50;
 
 export function FloatingAudioPlayer() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    // Mute / unmute without restarting the song
     const handleToggleMute = useCallback(async () => {
         const audio = audioRef.current;
         if (!audio) return;
 
+        // Initially muted: click to start playing with sound
         if (audio.paused) {
             audio.muted = false;
             audio.currentTime = LOOP_START_SEC;
@@ -33,20 +33,14 @@ export function FloatingAudioPlayer() {
             return;
         }
 
+        // Toggle mute/unmute while playing
         audio.muted = !audio.muted;
         setIsMuted(audio.muted);
     }, []);
 
-    const handleLoadedMetadata = () => {
-        const audio = audioRef.current;
-        if (!audio) return;
-
-        audio.currentTime = LOOP_START_SEC;
-    };
-
     const handleTimeUpdate = () => {
         const audio = audioRef.current;
-        if (!audio) return;
+        if (!audio || !Number.isFinite(audio.duration)) return;
 
         const effectiveEnd = Math.min(LOOP_END_SEC, audio.duration);
 
@@ -54,29 +48,6 @@ export function FloatingAudioPlayer() {
             audio.currentTime = LOOP_START_SEC;
         }
     };
-
-    // Attempt autoplay from the beginning on every page load
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
-
-        audio.currentTime = LOOP_START_SEC;
-        audio.muted = false;
-
-        const attemptPlay = async () => {
-            try {
-                await audio.play();
-                setIsPlaying(true);
-                setIsMuted(false);
-            } catch (error) {
-                // Browser may block audible autoplay.
-                setIsPlaying(false);
-                console.log("Autoplay blocked. User interaction required.");
-            }
-        };
-
-        void attemptPlay();
-    }, []);
 
     return (
         <div
@@ -89,7 +60,6 @@ export function FloatingAudioPlayer() {
                 ref={audioRef}
                 src={AUDIO_SRC}
                 preload="auto"
-                onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
@@ -98,8 +68,8 @@ export function FloatingAudioPlayer() {
             <button
                 type="button"
                 onClick={handleToggleMute}
-                aria-label={isMuted ? "Unmute wedding music" : "Mute wedding music"}
-                title={isMuted ? "Unmute music" : "Mute music"}
+                aria-label={isMuted ? "Play wedding music" : "Mute wedding music"}
+                title={isMuted ? "Play music" : "Mute music"}
                 className="flex items-center gap-2 transition-all cursor-pointer"
             >
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#6B0F0D] text-[#FDF4DE]">
