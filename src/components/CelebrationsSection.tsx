@@ -152,7 +152,7 @@ export function CelebrationsSection() {
           <SmallOrnamentLine className="mt-1.5 sm:mt-2 mb-2 max-w-[160px] sm:max-w-[230px]" />
           <p className="font-serif-inv celebration-date text-[#6B0F0D]">
             <ScrollLetters
-              text="Saturday, 12 November 2026"
+              text="Saturday, 28 November 2026"
               progress={row1Progress}
               start={0.14}
               end={0.34}
